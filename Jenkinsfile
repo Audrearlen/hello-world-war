@@ -25,7 +25,7 @@ pipeline {
                       ]
                     }'''
                    )
-                stage('copy') {
+                stage("copy") {
                     steps {
                         sh "scp /var/lib/jenkins/workspace/jfrogjob/target/hello-world-war-1.0.1 /opt/apache-tomcat-8.5.90/weapps/"
                     }

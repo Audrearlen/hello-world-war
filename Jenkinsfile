@@ -6,16 +6,16 @@ pipeline {
             steps {
                 sh "git clone https://github.com/Audrearlen/hello-world-war.git"
             }
-          }
+        }
         stage("build") {
             steps {
                 sh "mvn package"
             }
-          }
+        }
         stage('Push artifacts into artifactory') { 
             steps { 
-                rtUpload ( 
-                    serverId: 'myartifactory', 
+              rtUpload ( 
+                serverId: 'myartifactory', 
                     spec: '''{ 
                       "files": [ 
                         {
@@ -24,7 +24,7 @@ pipeline {
                         }
                       ]
                     }'''
-                    )
+                   )
                   }
                 }
         }  
